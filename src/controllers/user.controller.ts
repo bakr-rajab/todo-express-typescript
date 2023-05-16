@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 var bcrypt = require('bcryptjs');
 import {
     USER,
+    createUser,
     getUserByEmail,
 } from '../models/user.model';
 import { signToken } from '../utils/jwt';
@@ -34,4 +35,28 @@ const signIn = async (req: Request, res: Response) => {
         return res.status(500).send(error);
     }
 };
-export { signIn };
+
+const register = async (req: Request, res: Response) => {
+
+    try {
+        const { email, password } = req.body;
+
+        const user: USER | null = await getUserByEmail(email);
+        console.log({ user });
+
+        if (user || password.length < 6) {
+            return res
+                .status(400)
+                .send({ msg: 'Username alredy exist or invalid' });
+        }
+
+
+        let userDb = await createUser({ email: email, password: password });
+
+        const token = await signToken({ email: userDb.email, _id: userDb._id });
+        return res.send({ token: token });
+    } catch (error) {
+        return res.status(500).send(error);
+    }
+};
+export { signIn, register };
