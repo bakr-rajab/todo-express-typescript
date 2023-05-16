@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { TODO, createTodo, deleteTodo, getTodo } from '../models/todo.model';
+import { TODO, createTodo, deleteTodo, getAllTodos, getTodo } from '../models/todo.model';
 
 
 const create = async (req: Request, res: Response) => {
@@ -29,4 +29,11 @@ const deleteOne = async (req: Request, res: Response) => {
     res.send(todoDb)
 }
 
-export { create, getInfo ,deleteOne};
+const getAll = async (req: Request, res: Response) => {
+
+    let todoDb = await getAllTodos(res.locals.user._id)
+
+    res.send(todoDb)
+}
+
+export { create, getInfo ,deleteOne,getAll};

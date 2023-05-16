@@ -58,6 +58,11 @@ const deleteTodo = async (_id: string,userId:string): Promise<any> => {
     return todo;
 };
 
+const getAllTodos = async (userId:string): Promise<TODO[]|null> => {
+    const todos= await todoModel.find({ userId:userId }).exec();
+    return todos;
+};
+
 
 export {
     TODO,
@@ -65,4 +70,5 @@ export {
     getTodo,
     deleteTodo,
     getTodoById,
+    getAllTodos
 };

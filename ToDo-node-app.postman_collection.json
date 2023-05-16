@@ -1,0 +1,480 @@
+{
+	"info": {
+		"_postman_id": "dc0d7ae3-6198-40ba-9d89-10a834bc8de4",
+		"name": "ToDo-node-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9973314",
+		"_collection_link": "https://blue-meteor-836676.postman.co/workspace/My-Workspace98789798798~b82b3ba1-a62d-4940-87a9-360034257959/collection/9973314-dc0d7ae3-6198-40ba-9d89-10a834bc8de4?action=share&creator=9973314&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "sign-in",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"admin@dev.com\",\r\n    \"password\":\"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/user/sign-in",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"user",
+						"sign-in"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "sign-in",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin@dev.com\",\r\n    \"password\":\"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/user/sign-in",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"sign-in"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "216"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d8-NiBsiaxy4zkexWQFRM7YMV7b4Zs\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 May 2023 16:24:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGRldi5jb20iLCJfaWQiOiI2NDYzYWQ5MmVmZmI1ZjA4ZTUyNWEzOWIiLCJpYXQiOjE2ODQyNTQyNzEsImV4cCI6MTY4NDM0MDY3MX0.CRgJJc-1sYOv1cUkNh9sM4nvtWMoU3JTnnN-SYC0dbY\"\n}"
+				}
+			]
+		},
+		{
+			"name": "create Todo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGRldi5jb20iLCJfaWQiOiI2NDYzYWQ5MmVmZmI1ZjA4ZTUyNWEzOWIiLCJpYXQiOjE2ODQyNTQyNzEsImV4cCI6MTY4NDM0MDY3MX0.CRgJJc-1sYOv1cUkNh9sM4nvtWMoU3JTnnN-SYC0dbY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"new todo\",\r\n    \"body\":\"do home work\",\r\n    \"description\":\"descccc\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/todo/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"todo",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create Todo",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"new todo\",\r\n    \"body\":\"do home work\",\r\n    \"description\":\"descccc\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/todo/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"todo",
+								"create"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "136"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"88-fZ3KK8QewZQh+4e5cDRFnm6Muuo\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 May 2023 17:30:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"title\": \"new todo\",\n    \"userId\": \"6463ad92effb5f08e525a39b\",\n    \"body\": \"do home work\",\n    \"desc\": \"descccc\",\n    \"_id\": \"6463bdaa0e2005cb9742cf9e\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "get info",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "get info",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/todo/6463c62830dca14b78f44b29",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"todo",
+								"6463c62830dca14b78f44b29"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "250"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"fa-/tLZZLcQgAI9H7+kOTpbyQ6kOsc\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 May 2023 18:06:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"6463c62830dca14b78f44b29\",\n    \"title\": \"new todo\",\n    \"userId\": {\n        \"_id\": \"6463ad92effb5f08e525a39b\",\n        \"email\": \"admin@dev.com\",\n        \"password\": \"$2a$10$26/.GMb17fYJAC/Glnc5j.HGG23OlLHqiwaoredUZckjV.aqzyqc6\",\n        \"__v\": 0\n    },\n    \"body\": \"do home work\",\n    \"desc\": \"descccc\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "get all",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "get info",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/todo/6463c62830dca14b78f44b29",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"todo",
+								"6463c62830dca14b78f44b29"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "250"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"fa-/tLZZLcQgAI9H7+kOTpbyQ6kOsc\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 May 2023 18:06:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"6463c62830dca14b78f44b29\",\n    \"title\": \"new todo\",\n    \"userId\": {\n        \"_id\": \"6463ad92effb5f08e525a39b\",\n        \"email\": \"admin@dev.com\",\n        \"password\": \"$2a$10$26/.GMb17fYJAC/Glnc5j.HGG23OlLHqiwaoredUZckjV.aqzyqc6\",\n        \"__v\": 0\n    },\n    \"body\": \"do home work\",\n    \"desc\": \"descccc\",\n    \"__v\": 0\n}"
+				},
+				{
+					"name": "get all",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/todo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"todo"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "279"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"117-/UrKc/oeLsYUkDGWQE/tZWUq3DM\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 May 2023 18:10:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"6463c62830dca14b78f44b29\",\n        \"title\": \"new todo\",\n        \"userId\": \"6463ad92effb5f08e525a39b\",\n        \"body\": \"do home work\",\n        \"desc\": \"descccc\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6463c70930dca14b78f44b38\",\n        \"title\": \"new todo22\",\n        \"userId\": \"6463ad92effb5f08e525a39b\",\n        \"body\": \"do home work\",\n        \"desc\": \"descccc22\",\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "delete Todo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGRldi5jb20iLCJfaWQiOiI2NDYzYWQ5MmVmZmI1ZjA4ZTUyNWEzOWIiLCJpYXQiOjE2ODQyNTQyNzEsImV4cCI6MTY4NDM0MDY3MX0.CRgJJc-1sYOv1cUkNh9sM4nvtWMoU3JTnnN-SYC0dbY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/todo/6463bdaa0e2005cb9742cf9e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"todo",
+						"6463bdaa0e2005cb9742cf9e"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "delete",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/todo/6463bdaa0e2005cb9742cf9e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"todo",
+								"6463bdaa0e2005cb9742cf9e"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"26-cNC5LnJlaAZUicKAN6xhqN0RI9I\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 May 2023 18:08:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"acknowledged\": true,\n    \"deletedCount\": 0\n}"
+				}
+			]
+		}
+	]
+}
